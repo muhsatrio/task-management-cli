@@ -1,6 +1,6 @@
 ### Pre-step
 
-Add `.env` file with format below
+Add `.env` file in root directory with format below
 ```
 USER_DB={your username db}
 PASSWORD_DB={your password db}

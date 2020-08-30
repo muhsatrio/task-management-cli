@@ -13,24 +13,27 @@ import (
 
 // Task struct
 type Task struct {
-	id          int    `json: "id"`
-	rev         int    `json: "rev"`
-	name        string `json: "name"`
-	description string `json: "description`
-	createdAt   string `json: "createdAt"`
+	ID          int    `json:"id"`
+	Rev         int    `json:"rev"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	CreatedAt   string `json:"createdAt"`
+}
+
+// Docs struct
+type Docs struct {
+	ID    string `json:"id"`
+	Key   string `json:"key"`
+	Value struct {
+		Rev string `json:"rev"`
+	} `json:"value"`
 }
 
 // ResponseAPI struct
 type ResponseAPI struct {
-	totalRows int `json: "total_rows"`
-	offset    int `json: "offset"`
-	rows      struct {
-		id    string `json: "id"`
-		key   string `json: "key"`
-		value struct {
-			rev string `json: "rev"`
-		} `json: "value"`
-	} `json: "rows"`
+	TotalRows int    `json:"total_rows"`
+	Offset    int    `json:"offset"`
+	Rows      []Docs `json:"rows"`
 }
 
 var baseURL = getURLAPI()
